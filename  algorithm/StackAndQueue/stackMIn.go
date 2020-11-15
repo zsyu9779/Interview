@@ -22,12 +22,12 @@ type MinStack struct {
 }
 
 /** initialize your data structure here. */
-func Constructor() MinStack {
-	return MinStack{
-		stackData: []int{},
-		stackMin:  []int{},
-	}
-}
+//func Constructor() MinStack {
+//	return MinStack{
+//		stackData: []int{},
+//		stackMin:  []int{},
+//	}
+//}
 
 func (this *MinStack) Push(x int) {
 	if len(this.stackMin) == 0 {
@@ -62,11 +62,11 @@ type MinStackB struct {
 }
 
 /** initialize your data structure here. */
-func ConstructorB() MinStackB {
-	return MinStackB{
-		stackData: []int{},
-	}
-}
+//func ConstructorB() MinStackB {
+//	return MinStackB{
+//		stackData: []int{},
+//	}
+//}
 
 func (this *MinStackB) Push(x int) {
 	//如果push的值 <= Min 则现将原Min值压入栈内，再将x压入
