@@ -3,8 +3,12 @@
  */
 package StackAndQueue
 
-import "testing"
+import (
+	"testing"
+	"time"
+)
 
 func TestTestReverse(t *testing.T) {
-	TestReverse()
+	//TestReverse()
+	t.Log(time.Now().Format("20060102150405"))
 }

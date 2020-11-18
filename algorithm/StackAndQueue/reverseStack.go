@@ -13,10 +13,11 @@ import "fmt"
 
 func getAndRemoveLastElement(stack []int) int {
 	result := stack[len(stack)-1]
-	stack = stack[0:len(stack)-1]
+
+	stack = stack[0 : len(stack)-1]
 	if len(stack) == 0 {
 		return result
-	}else {
+	} else {
 		last := getAndRemoveLastElement(stack)
 		stack = append(stack, result)
 		return last
@@ -24,7 +25,7 @@ func getAndRemoveLastElement(stack []int) int {
 }
 
 //递归调用上面的func 使压栈顺序倒转
-func reverse(stack []int)  {
+func reverse(stack []int) {
 	if len(stack) == 0 {
 		return
 	}
@@ -34,7 +35,7 @@ func reverse(stack []int)  {
 }
 
 func TestReverse() {
-	stack := []int{1,2,3,4,5}
+	stack := []int{1, 2, 3, 4, 5}
 	reverse(stack)
 	fmt.Println(stack)
 }
