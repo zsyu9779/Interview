@@ -112,7 +112,7 @@ SQL标准的事务隔离级别包括：读未提交（read uncommitted）、读�
 
 ##### 假设数据表T中只有一列，其中一行的值为1，下面是按照时间顺序执行两个事务的行为。
 
-<img src="https://github.com/zsyu9779/Interview/blob/master/blog/img/%E4%BA%8B%E5%8A%A1%E9%9A%94%E7%A6%BB.png?raw=true" style="zoom:50%;" />
+<img src="https://github.com/zsyu9779/Interview/blob/master/blog/img/%E4%BA%8B%E5%8A%A1%E9%9A%94%E7%A6%BB.png?raw=true" style="zoom:30%;" />
 
 - 若隔离级别是“读未提交”， 则V1的值就是2。这时候事务B虽然还没有提交，但是结果已经被A看到了。因此，V2、V3也都是2。
 - 若隔离级别是“读提交”，则V1是1，V2的值是2。事务B的更新在提交后才能被A看到。所以， V3的值也是2。
