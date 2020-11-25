@@ -4,7 +4,7 @@
 
 以下是MySQL基本架构示意图
 
-![](./img/mysql arch.png)
+![](https://github.com/zsyu9779/Interview/blob/master/blog/img/mysql%20arch.png?raw=true)
 
 ### 分析一条sql语句的执行过程
 
@@ -112,7 +112,7 @@ SQL标准的事务隔离级别包括：读未提交（read uncommitted）、读�
 
 ##### 假设数据表T中只有一列，其中一行的值为1，下面是按照时间顺序执行两个事务的行为。
 
-<img src="./img/事务隔离.png" style="zoom:50%;" />
+<img src="https://github.com/zsyu9779/Interview/blob/master/blog/img/%E4%BA%8B%E5%8A%A1%E9%9A%94%E7%A6%BB.png?raw=true" style="zoom:50%;" />
 
 - 若隔离级别是“读未提交”， 则V1的值就是2。这时候事务B虽然还没有提交，但是结果已经被A看到了。因此，V2、V3也都是2。
 - 若隔离级别是“读提交”，则V1是1，V2的值是2。事务B的更新在提交后才能被A看到。所以， V3的值也是2。
@@ -193,7 +193,7 @@ index (k))engine=InnoDB;
 
 表中R1~R5的(ID,k)值分别为(100,1)、(200,2)、(300,3)、(500,5)和(600,6)，两棵树的示例示意图如下。
 
-<img src="./img/b-tree索引示意图.png" style="zoom:50%;" />
+<img src="https://github.com/zsyu9779/Interview/blob/master/blog/img/b-tree%E7%B4%A2%E5%BC%95%E7%A4%BA%E6%84%8F%E5%9B%BE.png?raw=true" style="zoom:50%;" />
 
 - 主键索引的叶子节点存的是整行数据。在InnoDB里，主键索引也被称为聚簇索引（clustered index）。**聚集索引一般是表中的主键索引，如果表中没有显示指定主键，则会选择表中的第一个不允许为NULL的唯一索引，如果还是没有的话，就采用Innodb存储引擎为每行数据内置的6字节ROWID作为聚集索引。**
 - 非主键索引的叶子节点内容是主键的值。在InnoDB里，非主键索引也被称为二级索引（secondary index）。
