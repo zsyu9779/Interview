@@ -177,3 +177,48 @@ SQL标准的事务隔离级别包括：读未提交（read uncommitted）、读�
 在InnoDB中，表都是根据主键顺序以索引的形式存放的，这种存储方式的表称为索引组织表。又因为前面我们提到的，InnoDB使用了B+树索引模型，所以数据都是存储在B+树中的。
 
 每一个索引在InnoDB中对应对应一棵B+树
+
+假设，我们有一个主键列为ID的表，表中有字段k，并且在k上有索引。
+
+这个表的建表语句是：
+
+```mysql
+create table T(
+id int primary key, #默认主键索引
+k int not null, 
+name varchar(16),
+  #自定义普通索引
+index (k))engine=InnoDB;
+```
+
+表中R1~R5的(ID,k)值分别为(100,1)、(200,2)、(300,3)、(500,5)和(600,6)，两棵树的示例示意图如下。
+
+<img src="./img/b-tree索引示意图.png" style="zoom:50%;" />
+
+- 主键索引的叶子节点存的是整行数据。在InnoDB里，主键索引也被称为聚簇索引（clustered index）。**聚集索引一般是表中的主键索引，如果表中没有显示指定主键，则会选择表中的第一个不允许为NULL的唯一索引，如果还是没有的话，就采用Innodb存储引擎为每行数据内置的6字节ROWID作为聚集索引。**
+- 非主键索引的叶子节点内容是主键的值。在InnoDB里，非主键索引也被称为二级索引（secondary index）。
+
+#### **基于主键索引和普通索引的查询有什么区别？**
+
+- 如果语句是select * from T where ID=500，即主键查询方式，则只需要搜索ID这棵B+树；
+- 如果语句是select * from T where k=5，即普通索引查询方式，则需要先搜索k索引树，得到ID的值为500，再到ID索引树搜索一次。这个过程称为回表。
+
+也就是说，基于非主键索引的查询需要多扫描一棵索引树。因此，我们在应用中应该尽量使用主键查询。
+
+#### 覆盖索引
+
+举个栗子🌰：
+
+```mysql
+#初始化一个表
+create table T (
+ID int primary key,
+k int NOT NULL DEFAULT 0, 
+s varchar(16) NOT NULL DEFAULT '',
+index k(k))
+engine=InnoDB;
+
+#插入数据
+insert into T values(100,1, 'aa'),(200,2,'bb'),(300,3,'cc'),(500,5,'ee'),(600,6,'ff'),(700,7,'gg');
+```
+
