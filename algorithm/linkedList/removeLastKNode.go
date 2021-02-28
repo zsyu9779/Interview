@@ -28,7 +28,7 @@ func removeLastKthDoubleNode(head *DoubleNode, K int) *	DoubleNode{
 	return head
 }
 
-/*双指针*/
+/*双指针(快慢指针)*/
 func removeLastKthNode1(head *Node, K int) *Node{
 	newHead := &Node{
 		next: head,
