@@ -20,5 +20,6 @@ func TestK(t *testing.T) {
 	head.next.next.next.next = &Node{
 		value: 5,
 	}
-	removeLastKthNode(head,2)
+	removeMidNode(head)
+	println(head)
 }
