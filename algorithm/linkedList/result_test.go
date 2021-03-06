@@ -20,6 +20,6 @@ func TestK(t *testing.T) {
 	head.next.next.next.next = &Node{
 		value: 5,
 	}
-	removeMidNode(head)
-	println(head)
+	head = reverseList(head)
+	t.Log(head)
 }
