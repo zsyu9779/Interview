@@ -3,8 +3,8 @@
  */
 package linkedList
 
-func reverseList(head *Node) *Node {
-	var pre,next *Node
+func reverseList(head *ListNode) *ListNode {
+	var pre,next *ListNode
 	for head != nil {
 		next = head.next
 		head.next = pre

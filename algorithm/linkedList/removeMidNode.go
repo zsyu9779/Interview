@@ -7,7 +7,7 @@ package linkedList
 	删除链表中间节点
 
 */
-func removeMidNode(head *Node) *Node {
+func removeMidNode(head *ListNode) *ListNode {
 	if head == nil || head.next == nil {
 		return head
 	}

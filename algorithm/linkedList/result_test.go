@@ -6,18 +6,18 @@ package linkedList
 import "testing"
 
 func TestK(t *testing.T) {
-	head := &Node{}
+	head := &ListNode{}
 	head.value = 1
-	head.next = &Node{
+	head.next = &ListNode{
 		value: 2,
 	}
-	head.next.next = &Node{
+	head.next.next = &ListNode{
 		value: 3,
 	}
-	head.next.next.next = &Node{
+	head.next.next.next = &ListNode{
 		value: 4,
 	}
-	head.next.next.next.next = &Node{
+	head.next.next.next.next = &ListNode{
 		value: 5,
 	}
 	head = reverseList(head)
