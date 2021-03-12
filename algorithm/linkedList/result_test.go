@@ -20,6 +20,7 @@ func TestK(t *testing.T) {
 	head.next.next.next.next = &ListNode{
 		value: 5,
 	}
-	head = reverseList(head)
-	t.Log(head)
+	head.next.next.next.next.next = head.next.next
+	result := detectCycle1(head)
+	t.Log(result)
 }
