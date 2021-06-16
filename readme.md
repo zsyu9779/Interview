@@ -1,6 +1,6 @@
 #### [mysql相关](./blog/mysql.md)
 
-#### [golang相关](./blog/GMP.md)
+#### [GMP模型](./blog/GMP.md)
 
 #### [算法相关](./algorithm/)
 

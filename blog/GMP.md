@@ -55,11 +55,11 @@ Goroutine 特点：
 
 老版本的调度器只存在两个角色，即G&M
 
-<img src="G&M.png" alt="G&M" style="zoom:67%;" />
+<img src="https://blog-material-1303960709.cos.ap-nanjing.myqcloud.com/image/G%26M.png" style="zoom:67%;" />
 
 老版本的调度器包括0.x的单线程调度器（几乎不可用）和1.0的多线程调度器，总体的实现思路如下（0.x版本只有M0）
 
-<img src="GM调度器.png" style="zoom:67%;" />
+<img src="https://blog-material-1303960709.cos.ap-nanjing.myqcloud.com/image/GM%E8%B0%83%E5%BA%A6%E5%99%A8.png" style="zoom:67%;" />
 
 ##### 单线程调度器
 
@@ -143,13 +143,13 @@ M 想要执行、放回 G 都必须访问全局 G 队列，并且 M 有多个，
 
 在新调度器中，出列 M (thread) 和 G (goroutine)，又引进了 P (Processor)。
 
-<img src="GMP.png" style="zoom:67%;" />
+<img src="https://blog-material-1303960709.cos.ap-nanjing.myqcloud.com/image/GMP.png" style="zoom:67%;" />
 
 #####  GMP 模型
 
 在 Go 中，**线程是运行 goroutine 的实体，调度器的功能是把可运行的 goroutine 分配到工作线程上**。
 
-![](gmp流程.jpeg)
+![](https://blog-material-1303960709.cos.ap-nanjing.myqcloud.com/image/gmp%E6%B5%81%E7%A8%8B.jpeg)
 
 全局队列（Global Queue）：存放等待运行的 G。
 P 的本地队列：同全局队列类似，存放的也是等待运行的 G，存的数量有限，不超过 256 个。新建 G’时，G’优先加入到 P 的本地队列，如果队列满了，则会把本地队列中一半的 G 移动到全局队列。
