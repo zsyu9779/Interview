@@ -18,6 +18,10 @@ func (s *stack) pop() *ListNode{
 func (s *stack) isEmpty() bool{
 	return len(s.stackList)>0
 }
+
+/**
+	判断一个链表是否为回文结构
+*/
 func isPalindrome(head *ListNode) bool {
 	if head == nil || head.next == nil {
 		return true
