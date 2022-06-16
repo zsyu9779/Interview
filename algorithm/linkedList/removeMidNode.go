@@ -8,21 +8,21 @@ package linkedList
 
 */
 func removeMidNode(head *ListNode) *ListNode {
-	if head == nil || head.next == nil {
+	if head == nil || head.Next == nil {
 		return head
 	}
-	if head.next.next == nil {
-		return head.next
+	if head.Next.Next == nil {
+		return head.Next
 	}
 	slow := head
-	fast := head.next.next
-	for slow.next != nil && fast.next != nil && fast.next.next != nil {
-		fast = fast.next.next
-		//if fast.next == nil {
+	fast := head.Next.Next
+	for slow.Next != nil && fast.Next != nil && fast.Next.Next != nil {
+		fast = fast.Next.Next
+		//if fast.Next == nil {
 		//	break
 		//}
-		slow = slow.next
+		slow = slow.Next
 	}
-	slow.next = slow.next.next
+	slow.Next = slow.Next.Next
 	return head
 }

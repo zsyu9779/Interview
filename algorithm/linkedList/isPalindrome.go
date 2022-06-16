@@ -23,25 +23,25 @@ func (s *stack) isEmpty() bool{
 	判断一个链表是否为回文结构
 */
 func isPalindrome(head *ListNode) bool {
-	if head == nil || head.next == nil {
+	if head == nil || head.Next == nil {
 		return true
 	}
 	var stack stack
-	rightIndex := head.next
+	rightIndex := head.Next
 	cur := head
-	for cur.next != nil && cur.next.next != nil {
-		rightIndex = rightIndex.next
-		cur = cur.next.next
+	for cur.Next != nil && cur.Next.Next != nil {
+		rightIndex = rightIndex.Next
+		cur = cur.Next.Next
 	}
 	for rightIndex != nil{
 		stack.push(rightIndex)
-		rightIndex = rightIndex.next
+		rightIndex = rightIndex.Next
 	}
 	for !stack.isEmpty() {
-		if head.value != stack.pop().value {
+		if head.Val != stack.pop().Val {
 			return false
 		}
-		head = head.next
+		head = head.Next
 	}
 	return true
 }

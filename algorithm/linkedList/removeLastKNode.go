@@ -31,16 +31,16 @@ func removeLastKthDoubleNode(head *DoubleNode, K int) *	DoubleNode{
 /*双指针(快慢指针)*/
 func removeLastKthNode1(head *ListNode, K int) *ListNode {
 	newHead := &ListNode{
-		next: head,
+		Next: head,
 	}
 	slow,fast := newHead,newHead
 	for i:=0;i<K;i++{
-		fast = fast.next
+		fast = fast.Next
 	}
-	for fast.next!=nil{
-		fast = fast.next
-		slow = slow.next
+	for fast.Next !=nil{
+		fast = fast.Next
+		slow = slow.Next
 	}
-	slow.next = slow.next.next
-	return newHead.next
+	slow.Next = slow.Next.Next
+	return newHead.Next
 }

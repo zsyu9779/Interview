@@ -8,14 +8,14 @@ package linkedList
 */
 
 func detectCycle(head *ListNode) bool{
-	slow := head.next
-	fast := head.next.next
-	for fast.next !=nil&&fast.next.next !=nil {
+	slow := head.Next
+	fast := head.Next.Next
+	for fast.Next !=nil&&fast.Next.Next !=nil {
 		if fast == slow {
 			return true
 		}
-		slow = slow.next
-		fast = fast.next.next
+		slow = slow.Next
+		fast = fast.Next.Next
 	}
 	return false
 }
@@ -25,18 +25,18 @@ func detectCycle(head *ListNode) bool{
 */
 
 func detectCycle1(head *ListNode) *ListNode{
-	slow := head.next
-	fast := head.next.next
+	slow := head.Next
+	fast := head.Next.Next
 	times:=0
-	for fast.next !=nil&&fast.next.next !=nil {
+	for fast.Next !=nil&&fast.Next.Next !=nil {
 		if fast == slow {
 			times++
 		}
 		if times ==2 {
 			return slow
 		}
-		slow = slow.next
-		fast = fast.next.next
+		slow = slow.Next
+		fast = fast.Next.Next
 	}
 	return nil
 }
