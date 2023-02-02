@@ -2,11 +2,12 @@ package pattern
 
 import "fmt"
 
-//工厂方法模式
+// 工厂方法模式
 type PType int
+
 const (
-	ProductA PType= 1
-	ProductB PType= 2
+	ProductA PType = 1
+	ProductB PType = 2
 )
 
 type Factory struct {
@@ -23,6 +24,7 @@ func (f *Factory) Generate(t PType) Product {
 	}
 
 }
+
 type Product interface {
 	create()
 }
@@ -40,22 +42,22 @@ func (p *Product2) create() {
 	fmt.Println("create product2")
 }
 
-func FactoryTest()  {
+func FactoryTest() {
 	factory := new(Factory)
-	p1 :=factory.Generate(ProductA)
+	p1 := factory.Generate(ProductA)
 	p1.create()
-	p2 :=factory.Generate(ProductB)
+	p2 := factory.Generate(ProductB)
 	p2.create()
 
 }
 
-//抽象工厂模式
+// 抽象工厂模式
 type BigFactory interface {
-	Generate()Product
+	Generate(t PType) Product
 }
 type expensiveFactory struct {
-
 }
+
 func (e *expensiveFactory) Generate(t PType) Product {
 	switch t {
 	case ProductA:
@@ -70,10 +72,9 @@ func (e *expensiveFactory) Generate(t PType) Product {
 
 }
 
-
 type cheapFactory struct {
-
 }
+
 func (c *cheapFactory) Generate(t PType) Product {
 	switch t {
 	case ProductA:
@@ -87,19 +88,20 @@ func (c *cheapFactory) Generate(t PType) Product {
 	}
 
 }
-//todo:正常来说差异应该体现在product层面，没想好怎么表示，稍后改进
-func AbstractFactoryTest()  {
+
+// todo:正常来说差异应该体现在product层面，没想好怎么表示，稍后改进
+func AbstractFactoryTest() {
 	expensiveFactory := new(expensiveFactory)
 	cheapFactory := new(cheapFactory)
 
-	p1 :=expensiveFactory.Generate(ProductA)
+	p1 := expensiveFactory.Generate(ProductA)
 	p1.create()
-	p2 :=expensiveFactory.Generate(ProductB)
+	p2 := expensiveFactory.Generate(ProductB)
 	p2.create()
 	fmt.Println("==========================")
-	p3 :=cheapFactory.Generate(ProductA)
+	p3 := cheapFactory.Generate(ProductA)
 	p3.create()
-	p4 :=cheapFactory.Generate(ProductB)
+	p4 := cheapFactory.Generate(ProductB)
 	p4.create()
 
 }
