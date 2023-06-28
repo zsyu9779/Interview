@@ -118,3 +118,23 @@ sh webappService.sh #启动UI界面
 
 ### 二、服务端接入（go-kit为例）
 
+#### 1.名词解释
+
+##### 1.span
+
+各业务端在进行链路追踪的时候可以创建span 这样在UI界面上就会显示由一组或者多组span组成的span树 用来监控一条链路的行为
+
+在skywalking中 业务端可以创建的span主要有三种：
+
+- EntrySpan
+
+```go
+func (t *Tracer) CreateEntrySpan(ctx context.Context, operationName string, extractor propagation.Extractor) (s Span, nCtx context.Context, err error)
+```
+
+使用这个方法 创建的是 Entry Span，代表的是入站操作，也就是服务接收到的请求。比如说，一个 HTTP 请求到达你的服务，并开始处理这个请求，那么就应该在这时创建一个 Entry Span。
+
+- LocalSpan
+
+
+
