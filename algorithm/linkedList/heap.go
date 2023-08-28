@@ -3,11 +3,11 @@
  */
 package linkedList
 
-/**
+/*
+*
 给你一个链表数组，每个链表都已经按升序排列。
 
 请你将所有链表合并到一个升序链表中，返回合并后的链表。
-
 */
 func MergeKLists(lists []*ListNode) *ListNode {
 	if len(lists) == 0 {
@@ -18,14 +18,14 @@ func MergeKLists(lists []*ListNode) *ListNode {
 	p := &dummy
 	for _, head := range lists {
 		if head != nil {
-			heap.insert(head)
+			heap.push(head)
 		}
 	}
 	for !heap.isEmpty() {
 		node := heap.delTop()
 		p.Next = node
 		if node.Next != nil {
-			heap.insert(node.Next)
+			heap.push(node.Next)
 		}
 		p = p.Next
 	}
@@ -42,40 +42,41 @@ func (h minHeap) isEmpty() bool {
 	return len(h) == 1
 }
 
-func (h *minHeap) insert(node *ListNode) {
+func (h minHeap) less(i, j int) bool {
+	return h[i].Val < h[j].Val
+}
+
+func (h *minHeap) push(node *ListNode) {
 	*h = append(*h, node)
 	h.swim(len(*h) - 1)
 }
 
 func (h *minHeap) delTop() *ListNode {
-	top := (*h)[1]
+	min := (*h)[1]
 	h.swap(1, len(*h)-1)
 	*h = (*h)[:len(*h)-1]
 	h.sink(1)
-	return top
+	return min
 }
 
 func (h *minHeap) swim(x int) {
-	for x > 1 && (*h)[x].Val < (*h)[parent(x)].Val {
-		h.swap(x, parent(x))
+	for x > 1 && !h.less(parent(x), x) {
+		h.swap(parent(x), x)
 		x = parent(x)
 	}
 }
 
 func (h *minHeap) sink(x int) {
-
-	//左孩子idx大于数组长度则右孩子一定大于
-	for left(x) < len(*h) {
-		//先假设左孩子比父节点大
-		older := left(x)
-		if right(x) < len(*h) && (*h)[x].Val > (*h)[right(x)].Val {
-			older = right(x)
+	for left(x) <= len(*h)-1 {
+		max := left(x)
+		if right(x) <= len(*h)-1 {
+			max = right(x)
 		}
-		if (*h)[x].Val <= (*h)[older].Val {
+		if h.less(x, max) {
 			break
 		}
-		h.swap(x, older)
-		x = older
+		h.swap(x, max)
+		x = max
 	}
 }
 

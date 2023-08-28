@@ -3,7 +3,10 @@
  */
 package linkedList
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func TestK(t *testing.T) {
 	head := &ListNode{}
@@ -67,5 +70,9 @@ func TestMergeKLists(t *testing.T) {
 	list = append(list, head1)
 	list = append(list, head3)
 	list = append(list, head4)
-	MergeKLists(list)
+	p := MergeKLists(list)
+	for p != nil {
+		fmt.Println(p.Val)
+		p = p.Next
+	}
 }

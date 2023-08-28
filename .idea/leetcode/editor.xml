@@ -47,6 +47,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="/var/folders/5h/gq04q6c922x5tl7dg4qs_hwm0000gn/T/leetcode/editor/cn/[300]最长递增子序列.go">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="/var/folders/5h/gq04q6c922x5tl7dg4qs_hwm0000gn/T/leetcode/editor/cn/doc/content/[300]最长递增子序列.md" />
+              <option name="frontendQuestionId" value="leetcode.cn300" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="/var/folders/5h/gq04q6c922x5tl7dg4qs_hwm0000gn/T/leetcode/editor/cn/[300]最长递增子序列.go" />
+              <option name="titleSlug" value="longest-increasing-subsequence" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="/var/folders/5h/gq04q6c922x5tl7dg4qs_hwm0000gn/T/leetcode/editor/cn/[3]无重复字符的最长子串.go">
           <value>
             <LeetcodeEditor>
@@ -55,6 +66,61 @@
               <option name="host" value="leetcode.cn" />
               <option name="path" value="/var/folders/5h/gq04q6c922x5tl7dg4qs_hwm0000gn/T/leetcode/editor/cn/[3]无重复字符的最长子串.go" />
               <option name="titleSlug" value="longest-substring-without-repeating-characters" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="/var/folders/5h/gq04q6c922x5tl7dg4qs_hwm0000gn/T/leetcode/editor/cn/[438]找到字符串中所有字母异位词.go">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="/var/folders/5h/gq04q6c922x5tl7dg4qs_hwm0000gn/T/leetcode/editor/cn/doc/content/[438]找到字符串中所有字母异位词.md" />
+              <option name="frontendQuestionId" value="leetcode.cn438" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="/var/folders/5h/gq04q6c922x5tl7dg4qs_hwm0000gn/T/leetcode/editor/cn/[438]找到字符串中所有字母异位词.go" />
+              <option name="titleSlug" value="find-all-anagrams-in-a-string" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="/var/folders/5h/gq04q6c922x5tl7dg4qs_hwm0000gn/T/leetcode/editor/cn/[46]全排列.go">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="/var/folders/5h/gq04q6c922x5tl7dg4qs_hwm0000gn/T/leetcode/editor/cn/doc/content/[46]全排列.md" />
+              <option name="frontendQuestionId" value="leetcode.cn46" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="/var/folders/5h/gq04q6c922x5tl7dg4qs_hwm0000gn/T/leetcode/editor/cn/[46]全排列.go" />
+              <option name="titleSlug" value="permutations" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="/var/folders/5h/gq04q6c922x5tl7dg4qs_hwm0000gn/T/leetcode/editor/cn/[567]字符串的排列.go">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="/var/folders/5h/gq04q6c922x5tl7dg4qs_hwm0000gn/T/leetcode/editor/cn/doc/content/[567]字符串的排列.md" />
+              <option name="frontendQuestionId" value="leetcode.cn567" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="/var/folders/5h/gq04q6c922x5tl7dg4qs_hwm0000gn/T/leetcode/editor/cn/[567]字符串的排列.go" />
+              <option name="titleSlug" value="permutation-in-string" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="/var/folders/5h/gq04q6c922x5tl7dg4qs_hwm0000gn/T/leetcode/editor/cn/[76]最小覆盖子串.go">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="/var/folders/5h/gq04q6c922x5tl7dg4qs_hwm0000gn/T/leetcode/editor/cn/doc/content/[76]最小覆盖子串.md" />
+              <option name="frontendQuestionId" value="leetcode.cn76" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="/var/folders/5h/gq04q6c922x5tl7dg4qs_hwm0000gn/T/leetcode/editor/cn/[76]最小覆盖子串.go" />
+              <option name="titleSlug" value="minimum-window-substring" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="/var/folders/5h/gq04q6c922x5tl7dg4qs_hwm0000gn/T/leetcode/editor/cn/[86]分隔链表.go">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="/var/folders/5h/gq04q6c922x5tl7dg4qs_hwm0000gn/T/leetcode/editor/cn/doc/content/[86]分隔链表.md" />
+              <option name="frontendQuestionId" value="leetcode.cn86" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="/var/folders/5h/gq04q6c922x5tl7dg4qs_hwm0000gn/T/leetcode/editor/cn/[86]分隔链表.go" />
+              <option name="titleSlug" value="partition-list" />
             </LeetcodeEditor>
           </value>
         </entry>
