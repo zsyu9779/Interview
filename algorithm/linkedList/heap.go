@@ -68,15 +68,18 @@ func (h *minHeap) swim(x int) {
 
 func (h *minHeap) sink(x int) {
 	for left(x) <= len(*h)-1 {
-		max := left(x)
-		if right(x) <= len(*h)-1 {
-			max = right(x)
-		}
-		if h.less(x, max) {
+		if h.less(x, left(x)) {
 			break
 		}
-		h.swap(x, max)
-		x = max
+		// 下沉和两个子节点最大的交换
+		h.swap(x, left(x))
+		// 如果是和右子节点交换 则左右节点再次交换
+		if right(x) <= len(*h)-1 && h.less(right(x), left(x)) {
+			h.swap(right(x), left(x))
+			x = right(x)
+		} else {
+			x = left(x)
+		}
 	}
 }
 

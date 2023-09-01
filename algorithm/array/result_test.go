@@ -33,3 +33,9 @@ func TestNewMinHeap(t *testing.T) {
 		fmt.Println(min)
 	}
 }
+
+func TestSearchRange(t *testing.T) {
+	nums := []int{}
+	target := 0
+	SearchRange(nums, target)
+}
